@@ -9,11 +9,23 @@
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
   <title>TODO List</title>
 </head>
 <body>
+  <section id="app">
+    <div class="container mt-3">
+      <h1>TODO List</h1>
+        <ul class="list-group">
+          <li v-for="item in list" class="list-group-item">
+            <span>{{ item }}</span>
+          </li>
+        </ul>
+    </div>
+  </section>
   
+
+  <script src="script.js"></script>
 </body>
 </html>
