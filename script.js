@@ -21,7 +21,7 @@ createApp({
       axios.post("server.php", data)
       .then((result)=>{
         this.list = result.data;
-        this.task = "";
+        this.task = ""
       })
     },
     deleteTask(index){
