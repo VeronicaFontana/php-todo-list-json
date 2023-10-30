@@ -9,6 +9,14 @@ if(isset($_POST["task"])){
 }
 file_put_contents ("list.json", json_encode($listArr));
 
+if(isset($_POST["taskToDelete"])){
+  if(isset($listArr[$_POST["taskToDelete"]])){
+    array_splice($listArr, $_POST["taskToDelete"], 1);
+    file_put_contents("list.json", json_encode($listArr));
+  }
+}
+
+
 header("Content-Type: application/json");
 
 echo json_encode($listArr);
