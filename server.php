@@ -5,7 +5,11 @@ $listArr = json_decode($listString, true);
 
 if(isset($_POST["task"])){
   $newTask = $_POST["task"];
-  $listArr[] = $newTask;
+  $newitem = [
+    "task" => $newTask,
+    "done" => false
+  ];
+  $listArr[] = $newitem;
 }
 file_put_contents ("list.json", json_encode($listArr));
 
@@ -14,6 +18,12 @@ if(isset($_POST["taskToDelete"])){
     array_splice($listArr, $_POST["taskToDelete"], 1);
     file_put_contents("list.json", json_encode($listArr));
   }
+}
+
+if(isset($_POST["indexToToggle"])){
+  $indexToToggle = $_POST["indexToToggle"];
+  $list[$indexToToggle]["done"] = !$list[$indexToToggle]["done"];
+  file_put_contents("list.json", json_encode($list));
 }
 
 

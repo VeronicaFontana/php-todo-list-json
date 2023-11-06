@@ -1,1 +1,1 @@
-["Fare la spesa","Leggere","Pagare le bollette","Chiamare il medico"]
+[{"task":"Fare la spesa","done":false},{"task":"Leggere","done":false},{"task":"Pagare le bollette","done":true},{"task":"Chiamare il medico","done":false},{"task":"Leggere","done":false}]
